@@ -8,7 +8,7 @@
   struct Node {  
                int data ;       // LL has node which contains data which is integer and a pointer which points to *next* node h
                struct Node * next;     
-              } ;    // Declaration closed     
+              } ;    // Declaration of struct class closed     
 
 
 // Why bool because I want to return solution in 'Yes' /'No' i.e  whether they are identical or not. 
