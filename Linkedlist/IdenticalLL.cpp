@@ -31,6 +31,5 @@ bool areIdentical(struct Node *list1 , struct Node *list2) // Function to compar
 // Space Complexity : O(1)
 
 
-
 /* Not a Leetcode problem but GFG problem */
-/* But Imp for Interview point of view */
+/* But Imp from Interview point of view */
