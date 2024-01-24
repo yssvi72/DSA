@@ -4,7 +4,7 @@
 
 //PROGRAM : 
 
-// Why struct as it allows a user to combine data items of different data types under a single name whereas class can combine datatypes of similar characteristics
+// Why struct as it allows a user to combine data items of different data types under a single name whereas class only combine datatypes of similar characteristics
   struct Node {  
                int data ;       // LL has node which contains data which is integer and a pointer which points to *next* node h
                struct Node * next;     
