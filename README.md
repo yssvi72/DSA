@@ -1,16 +1,9 @@
 # Data Structures and Algorithms - Important Questions
 
-<p align="center">
-  <img src="https://your-repository-logo.png" alt="Repository Logo">
-</p>
 
 # Data Structures and Algorithms - Important Questions with C++ Solutions
 
 Welcome to the **Data Structures and Algorithms - Important Questions** repository! 🚀 This collection is a carefully curated list of crucial questions covering a wide range of DSA topics, with solutions provided in C++.
-
-<p align="center">
-  <img src="https://your-screenshot.png" alt="Repository Screenshot">
-</p>
 
 ## 🌟 Features
 
