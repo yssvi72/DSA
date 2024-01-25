@@ -1,5 +1,3 @@
-# Data Structures and Algorithms - Important Questions
-
 
 # Data Structures and Algorithms - Important Questions with C++ Solutions
 
