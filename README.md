@@ -1,8 +1,6 @@
 # Data Structures and Algorithms - Important Questions
 
-<p align="center">
-  <img src="https://your-repository-image-url.png" alt="Repository Logo">
-</p>
+
 
 ## Overview
 
