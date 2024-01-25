@@ -6,7 +6,7 @@
 ListNode *middleNode(ListNode *head) // head represent start of list , can take other varaible name but it should start from the beginning node i.e you have to initialise it to head
 {
    int count = 0;  // Counter for traversal of LL
-   ListNode *temp = head;   // Create temp and intialise it to hea , temp for traversal 
+   ListNode *temp = head;   // Create temp and intialise it to head , temp for traversal 
    while ( temp ! = NULL)   // till the time temp hasn't reached last node
      {   count ++;          // Increment the counter
          temp = temp->next;   // Move it forward
