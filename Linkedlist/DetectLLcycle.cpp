@@ -3,7 +3,7 @@
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Approach 1: Using Hashset ( Beginner Level Approach ) 
-bool hasCycle( ListNode *head){  // bool to detect cycle
+bool hasCycle( ListNode *head){  // bool to detect cycle as we want ans in yes/no
   std::unordered_set<ListNode*> visited;  //We start with an empty hash set (visited) to keep track of nodes we have visited.
   while( head ! = NULL)
     {  //  Traverse the linked list until we reach the end
