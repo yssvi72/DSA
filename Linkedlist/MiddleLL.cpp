@@ -1,6 +1,7 @@
 // Middle of Linked list 
 // To find middle of linked list , we must be aware that it  can be of either even length or odd length.
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Approach  1:  Beginner level ( Dividing the list by 2 )
 
 ListNode *middleNode(ListNode *head) // head represent start of list , can take other varaible name but it should start from the beginning node i.e you have to initialise it to head
@@ -20,7 +21,7 @@ ListNode *middleNode(ListNode *head) // head represent start of list , can take 
     return temp; // Return value of temp
 }
      
-
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 // Approach 2 : Slow and fast pointer , till the time fast pointer which moves 2 steps at a time reached end , slow pointer which moves one step at a time  , will still be pointing at middle most position.
 
