@@ -28,6 +28,7 @@ bool areMirror(Node* a, Node* b)
             areMirror(a->right, b->left);                                                    //right of 'a' should be left of 'b' 
 }
 //TC -O(n) , SC-O(h) where h is height of binary tree
+
 //Approach 2: Iterative Approach------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // Iterative algorithm that uses a stack to keep track of the nodes being traversed. Uses two stacks for two trees. Pops a node from both stacks, checks if their data is equal, and then pushes their left and right children onto the stacks in the opposite0 order
 bool isMirrorIterative(Node* root1, Node* root2)
@@ -38,41 +39,41 @@ bool isMirrorIterative(Node* root1, Node* root2)
     if (root1 == NULL || root2 == NULL)
         return false;
   
-    // Stack node 
+    // Stack node and push root of both tree
     stack<Node*> s1, s2;
     s1.push(root1);
     s2.push(root2);
      
     while (!s1.empty() && !s2.empty())
-    {    //Till both 
-        Node* curr1 = s1.top();
-        s1.pop();
-        Node* curr2 = s2.top();
-        s2.pop();
+    {    //Till both stack elements have emptied 
+        Node* curr1 = s1.top();  //Point top
+        s1.pop(); //Pop top most element
+        Node* curr2 = s2.top();   //Point top
+        s2.pop();  //Pop top most element
          
-        if (curr1->data != curr2->data)
+        if (curr1->data != curr2->data)  //If current data i.e is popped from both stacks are not equal , return false 
             return false;
          
-        if (curr1->left != NULL && curr2->right != NULL)
-        {
-            s1.push(curr1->left);
-            s2.push(curr2->right);
+        if (curr1->left != NULL && curr2->right != NULL)  
+        {   //Mirror condition
+            s1.push(curr1->left);  //Push in left
+            s2.push(curr2->right);  //Push in right
         }
         else if (curr1->left != NULL || curr2->right != NULL)
-            return false;
+            return false;       // Not equal , false
          
         if (curr1->right != NULL && curr2->left != NULL)
         {
-            s1.push(curr1->right);
-            s2.push(curr2->left);
+            s1.push(curr1->right); //Vice versa of above case
+            s2.push(curr2->left);  
         }
         else if (curr1->right != NULL || curr2->left != NULL)
-            return false;
-    }
+            return false;     // Not equal  , false
+    } 
      
     if (!s1.empty() || !s2.empty())
-        return false;
+        return false;       //Till the time , if one of the stack got empty before than other , please return false
      
-    return true;
+    return true;           // Else for all other cases , return true
 }
 //TC--> O(n) , SC-->O(h)
