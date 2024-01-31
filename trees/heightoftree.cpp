@@ -1,6 +1,6 @@
 //The height of the tree is the number of vertices in the tree from the root to the deepest node. The height of an empty tree is 0 and the height of a tree with single node is 1.
 
-//Approach 1 : Recursion  T: O(n), S: O(n) -------------------------------------------------------------------------------------------------------------------------------------
+//Approach 1 : Recursion  T: O(n), S: O(n) ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 int maxDepth(node* node)
 {
     if (node == NULL)
@@ -18,7 +18,7 @@ int maxDepth(node* node)
     }
 }
 
-//Approach 2: Queue to implement T:O(n) S:O(n)-----------------------------------------------------------------------------------------------------------------------------------
+//Approach 2: Queue to implement T:O(n) S:O(n)------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     int depth = 0;
     queue<Node*> q;
     // Pushing first level element along with NULL
@@ -47,7 +47,7 @@ int maxDepth(node* node)
         }
     }
     return depth;
-// Approach 3 : Using Level Order Traversal T: O(n) S: O(n)------------------------------------------------------------------------------------------------------------------------
+// Approach 3 : Using Level Order Traversal T: O(n) S: O(n)------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // This method also uses the concept of Level Order Traversal but we wont be adding null in the Queue. Simply increase the counter when the level increases and push the children of current node into the queue, then remove all the nodes from the queue of the current Level.
 int height(Node* root)
 {
