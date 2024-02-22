@@ -1,6 +1,6 @@
 //wo trees are called isomorphic if one of them can be obtained from other by a series of flips, i.e. by swapping left and right children of a number of nodes. 
 //Any number of nodes at any level can have their children swapped. Two empty trees are isomorphic. For example, following two trees are isomorphic with following sub-trees flipped: 2 and 3, NULL and 6, 7 and 8.
-/* A binary tree node has data, pointer to left and right children */
+//A binary tree node has data, pointer to left and right children  
 struct node
 {
     int data;
