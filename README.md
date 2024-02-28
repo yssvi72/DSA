@@ -10,40 +10,12 @@ Welcome to the **Data Structures and Algorithms - Important Questions** reposito
 - **Clear C++ Solutions**: Each question comes with detailed solutions written in C++ to help you grasp the underlying concepts.
 
 - **Visual Learning**: Visualizations and illustrations to make complex concepts more accessible.
+  
 ## LEETCODE PATTERNS 
-Preface
-It is highly recommended to read chapters 1, 2, 3, 4, 8, and 10 of Cracking The Coding Interview to familiarize yourself with the following data structures and their operations:
-
-Arrays
-Maps
-Linked Lists
-Queues
-Heaps
-Stacks
-Trees
-Graphs
-In addition, you should have a good grasp on common algorithms such as:
-
-Breadth-first search
-Depth-first search
-Binary search
-Recursion
-Notes
-This pdf contains useful information for the built-in data structures in Java.
-
-Other useful methods to know include substring(), toCharArray(), Math.max(), Math.min(), and Arrays.fill().
 
 Question List
 The entire question list can be found here: https://seanprashad.com/leetcode-patterns/.
-
-In addition to viewing the question list, companies that have previously asked the question in the past 6 months (as of May 2021) will be listed. You can also use the checkboxes to mark which questions you've completed!
-
-Solutions
-Solutions written in Java can be found in the solutions branch.
-
-Leetcode Discuss
-Leetcode discuss is an amazing resource and features previous interview questions, as well as compensation and general career advice.
-
+----------------------------------------------------------------------------------------
 Tips to Consider
 If input array is sorted then
     - Binary search
@@ -83,17 +55,7 @@ If asked for common strings then
 Else
     - Map/Set for O(1) time & O(n) space
     - Sort input for O(nlogn) time and O(1) space
-Suggestions
-Think a question should/shouldn't be included? Wish there was another feature? Feel free to open an issue with your suggestion!
-
-Acknowledgements
-This list is heavily inspired from Grokking the Coding Interview with additional problems extracted from the Blind 75 list and this medium article on 14 patterns to ace any coding interview question.
-
-
-
-
-
-
+--------------------------------------------------
 
 ## 🚀 Getting Started
 
