@@ -3,19 +3,6 @@
 
 Welcome to the **Data Structures and Algorithms - Important Questions** repository! 🚀 This collection is a carefully curated list of crucial questions covering a wide range of DSA topics, with solutions provided in C++.
 
-## 🌟 Features
-
-- **Curated Selection**: A handpicked collection of essential DSA questions to reinforce your understanding.
-
-- **Clear C++ Solutions**: Each question comes with detailed solutions written in C++ to help you grasp the underlying concepts.
-
-- **Visual Learning**: Visualizations and illustrations to make complex concepts more accessible.
-  
-## LEETCODE PATTERNS 
-
-Question List
-The entire question list can be found here: https://seanprashad.com/leetcode-patterns/.
-----------------------------------------------------------------------------------------
 Tips to Consider
 If input array is sorted then
     - Binary search
