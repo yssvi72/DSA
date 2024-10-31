@@ -1,46 +1,52 @@
 
 class Solution {
-  void update(long long &r,int rind,vector<pa>& fac,const vector<vector<int>>& factory,const vector<int> &robot){
-    int rp=robot[rind];
-    auto it=lower_bound(fac.begin(),fac.end(),rp,[](const auto &v,int target){return target>v.loc;});
-    if(it==fac.end()) it=prev(it);
-    else if(it!=fac.begin() && abs(rp-prev(it)->loc)<abs(rp-it->loc)) it=prev(it);
-    if(it->lim){it->lim--;r+=abs(rp-it->loc);return;}
-    //if space of closest factory is non zero, just put it there and update the result.
-    auto itr=next(it);
-    while(itr!=fac.end())//try pushing it to the right
-      if(itr->lim==0) itr++;
-      else break;
-    if(it==fac.begin()){itr->lim--;r+=abs(rp-itr->loc);return;}
-    //if the cloest factory is the first one and it's full, we have to push it to the right
-    int incr=itr==fac.end()?INT_MAX:abs(rp-itr->loc);
-    //if no space to the right at all, we set the increment to infinity, so it'll push to the left for sure
-    long long rl=0;
-    auto itl=prev(it);
-    while(itl!=fac.begin()){//try pushing it to the left
-      if((*itl).lim==0) itl--;
-      else break;
-    }
-    if(itl->lim==0){itr->lim--;r+=incr;return;}//no space on left, have to push to the right
-    int incl=abs(rp-it->loc),facl=itl->loc,cind=it-fac.begin(),lind=itl-fac.begin();
-    for(;cind!=lind;--cind){
-      rind-=factory[cind][1];//jump by the factory capacity,that's the robot that needs to move
-      incl+=abs(robot[rind]-fac[cind-1].loc)-abs(robot[rind]-fac[cind].loc);//update the distance increment
-    }
-    if(incl<incr){itl->lim--;r+=incl;}
-    else {itr->lim--;r+=incr;}
-    //update the capacity in `fac` and the total distance accordingly.
-  }
 public:
     long long minimumTotalDistance(vector<int>& robot, vector<vector<int>>& factory) {
-        sort(robot.begin(),robot.end());
-        vector<pa> fac;
-        fac.reserve(factory.size());
-        for(const auto &v:factory) fac.emplace_back(pa{v[0],v[1]});
-        sort(fac.begin(),fac.end());
-        for(int i=0;i<factory.size();++i) factory[i][0]=fac[i].loc,factory[i][1]=fac[i].lim;
-        long long r=0;
-        for(int i=0;i<robot.size();++i) update(r,i,fac,factory,robot);
-        return r;
+        // Sort both robots and factories for optimal assignment
+        sort(robot.begin(), robot.end());
+        sort(factory.begin(), factory.end());
+        
+        int m = robot.size(), n = factory.size();
+        // dp[i][j]: minimum total distance for robots[i:] using factories[j:]
+        vector<vector<long long>> dp(m + 1, vector<long long>(n + 1));
+        
+        // Base case: if no factories are available, distance is infinity
+        for (int i = 0; i < m; i++) {
+            dp[i][n] = LLONG_MAX;
+        }
+        
+        // Process each factory from right to left
+        for (int j = n - 1; j >= 0; j--) {
+            // Track cumulative distance from current factory to robots
+            long long prefix = 0;
+            // Deque stores pairs of (robot index, minimum distance)
+            deque<pair<int, long long>> qq;
+            // Initialize with base case
+            qq.push_back({m, 0});
+            
+            // Process each robot from right to left
+            for (int i = m - 1; i >= 0; i--) {
+                // Add distance from current robot to current factory
+                prefix += abs(robot[i] - factory[j][0]);
+                
+                // Remove entries that exceed factory capacity
+                while (!qq.empty() && qq.front().first > i + factory[j][1]) {
+                    qq.pop_front();
+                }
+                
+                // Maintain monotonic property of deque
+                while (!qq.empty() && qq.back().second >= dp[i][j + 1] - prefix) {
+                    qq.pop_back();
+                }
+                
+                // Add current state to deque
+                qq.push_back({i, dp[i][j + 1] - prefix});
+                // Calculate minimum distance for current state
+                dp[i][j] = qq.front().second + prefix;
+            }
+        }
+        
+        // Return minimum total distance starting from first robot and first factory
+        return dp[0][0];
     }
 };
