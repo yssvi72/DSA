@@ -4,7 +4,7 @@ public:
     vector<int> leftmostBuildingQueries(vector<int>& heights, vector<vector<int>>& queries) {
         int n = heights.size();
         map<int, vector<pair<int, int>>> mp; // Stores index -> list of next taller buildings
-        vector<pair<int, int>> st;          // Monotonic stack for next taller element
+        vector<pair<int, int>> st;          // Monotonic stack for next taller 
         bool flag = false;
 
         // Step 1: Precompute next greater elements
