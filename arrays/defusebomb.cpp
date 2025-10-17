@@ -10,7 +10,6 @@ public:
         for(int i=0;i<n;i++){
             code2.push_back(code[i]);
         }
-
         if(k>0){
             for(int i=0;i<n;i++){
                 int sum=0;
